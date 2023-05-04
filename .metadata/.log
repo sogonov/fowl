@@ -1,0 +1,18 @@
+!SESSION 2023-05-04 22:02:43.364 -----------------------------------------------
+eclipse.buildId=Version 1.9.0
+java.version=11.0.11
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=ru_RU
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2023-05-04 22:03:17.902
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2023-05-04 22:03:17.971
+!MESSAGE Log4j initialized with config file C:\Users\sogonov\STM32CubeIDE\workspace_fowl\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2023-05-04 22:03:22.413
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2023-05-04 22:05:21.413
+!MESSAGE Indexed 'fowl' (21 sources, 88 headers) in 3.43 sec: 6,779 declarations; 31,023 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0053%)
