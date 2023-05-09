@@ -1,0 +1,13 @@
+/*
+ * ads1293.h
+ *
+ *  Created on: 9 мая 2023 г.
+ *      Author: sogonov
+ */
+
+#ifndef SRC_ADS1293_H_
+#define SRC_ADS1293_H_
+
+
+
+#endif /* SRC_ADS1293_H_ */
