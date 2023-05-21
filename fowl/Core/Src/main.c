@@ -68,7 +68,7 @@ static void cs_low_ads(){
 	  HAL_GPIO_WritePin(GPIOA, ADS_CS_Pin, GPIO_PIN_RESET); //CS установлен в ноль
 	  };
 static void cs_high_ads(){
-	 	  HAL_GPIO_WritePin(GPIOA, ADS_CS_Pin, GPIO_PIN_SET); //CS установлен в ноль
+	 	  HAL_GPIO_WritePin(GPIOA, ADS_CS_Pin, GPIO_PIN_SET); //CS установлен в единицу
 	 	  };
 
 
@@ -134,9 +134,39 @@ void ADS1293_INIT(){
 };
 
 void ADS1293_start_conv(){
-	ADS1293_write(ADS1293_CH_CNFG_REG,0b1110001);
+	ADS1293_write(ADS1293_CH_CNFG_REG,0b001);
 }
 
+
+void ADS1293_stream_read(unsigned long int* databuffer){
+
+	unsigned long int  result = 0x000000000000000000000000;
+	  //////////// Read lead I
+	  result=ADS1293_read(0x37);
+	  result=result<<8;
+	  result|=ADS1293_read(0x38);
+	  result=result<<8;
+	  result|=ADS1293_read(0x39);
+	  databuffer[0]=result;
+
+	  /////////// Read lead II
+	  result=ADS1293_read(0x3A);
+	  result=result<<8;
+	  result|=ADS1293_read(0x3B);
+	  result=result<<8;
+	  result|=ADS1293_read(0x3C);
+	  databuffer[1]=result;
+
+	  //////Read lead V1
+	  result=ADS1293_read(0x3D);
+	  result=result<<8;
+	  result|=ADS1293_read(0x3E);
+	  result=result<<8;
+	  result|=ADS1293_read(0x3F);
+	  databuffer[2]=result;
+
+
+}
 
 
 

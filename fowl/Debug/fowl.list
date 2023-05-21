@@ -21,23 +21,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
   8 .ARM.attributes 00000030  00000000  00000000  00020010  2**0
                   CONTENTS, READONLY
-  9 .debug_info   0000b6fb  00000000  00000000  00020040  2**0
+  9 .debug_info   0000b74c  00000000  00000000  00020040  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 10 .debug_abbrev 00001c69  00000000  00000000  0002b73b  2**0
+ 10 .debug_abbrev 00001c69  00000000  00000000  0002b78c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 11 .debug_aranges 000010c0  00000000  00000000  0002d3a8  2**3
+ 11 .debug_aranges 000010d0  00000000  00000000  0002d3f8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 12 .debug_ranges 00000ff8  00000000  00000000  0002e468  2**3
+ 12 .debug_ranges 00001008  00000000  00000000  0002e4c8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_macro  0002075f  00000000  00000000  0002f460  2**0
+ 13 .debug_macro  0002075f  00000000  00000000  0002f4d0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_line   0000ba3c  00000000  00000000  0004fbbf  2**0
+ 14 .debug_line   0000bacb  00000000  00000000  0004fc2f  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_str    000d14a5  00000000  00000000  0005b5fb  2**0
+ 15 .debug_str    000d14de  00000000  00000000  0005b6fa  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .comment      00000050  00000000  00000000  0012caa0  2**0
+ 16 .comment      00000050  00000000  00000000  0012cbd8  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  000044c0  00000000  00000000  0012caf0  2**2
+ 17 .debug_frame  00004500  00000000  00000000  0012cc28  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -127,7 +127,7 @@ static void cs_low_ads(){
 static void cs_high_ads(){
  80001c2:	b580      	push	{r7, lr}
  80001c4:	af00      	add	r7, sp, #0
-	 	  HAL_GPIO_WritePin(GPIOA, ADS_CS_Pin, GPIO_PIN_SET); //CS установлен в ноль
+	 	  HAL_GPIO_WritePin(GPIOA, ADS_CS_Pin, GPIO_PIN_SET); //CS установлен в единицу
  80001c6:	2201      	movs	r2, #1
  80001c8:	2110      	movs	r1, #16
  80001ca:	f04f 4090 	mov.w	r0, #1207959552	; 0x48000000
